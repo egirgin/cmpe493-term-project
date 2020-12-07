@@ -1,0 +1,4 @@
+.vscode
+__MACOSX
+__pycache__
+/data/metadata.csv
