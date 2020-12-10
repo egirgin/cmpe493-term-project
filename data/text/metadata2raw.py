@@ -6,7 +6,7 @@ raw_data = metadata[["cord_uid", "title", "abstract"]]
 
 print("Original shape: " + str(raw_data.shape))
 
-with open("doc_list.txt" ,"r") as docFile:
+with open("../doc_list.txt" ,"r") as docFile:
     doc_list = docFile.readlines()
 
 doc_list = list(map(lambda x: x[:-1], doc_list))

@@ -7,7 +7,7 @@ def line2list(line):
     return [list_line[0], list_line[2], list_line[3]]
 
 
-with open("labels.txt") as labelFile:
+with open("original_labels.txt") as labelFile:
     lines = labelFile.readlines()
 
     lines = list(map(line2list, lines))
@@ -30,6 +30,6 @@ with open("labels.json", "w+") as labeljson:
 
 doc_list = set(doc_list)
 
-with open("doc_list.txt", "w+") as docFile:
+with open("../doc_list.txt", "w+") as docFile:
     for doc in doc_list:
         docFile.write(doc+"\n")
