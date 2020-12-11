@@ -59,6 +59,12 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
         - champions list (top docs) : apply a threshold to the posting list of a term
         - we assume authority (quality) of each document is the same. thus we dont need a tier 
 
+---
+ - Deep Learning:
+    - word embeddings
+    - Word2Vec
+    - BERT
+    - LSTM/GRU/Attention
 
 ## Evaluation
  - Mean Average Precision (mAP)
