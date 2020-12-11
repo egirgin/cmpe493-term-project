@@ -1,6 +1,6 @@
 import pandas as pd
 
-metadata = pd.read_csv("../data/raw_data.csv")
+metadata = pd.read_csv("../data/text/raw_data.csv")
 
 data = []
 
