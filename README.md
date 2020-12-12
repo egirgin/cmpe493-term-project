@@ -41,6 +41,7 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
 - tf-idf weighting: (Lec6)
     - ```tf_idf(t,d) = w(t,d) * idf(t)```
     - ```score(q,d) = sum( for all term t in (query q INTERSECTION document d), tf_idf(t, d))```
+    - see ```sklearn.feature_extraction.text.TfidfVectorizer```
 ---
 - Vector representation: (Lec6)
     - Table : Rows are tokens, columns are documents -> calculate tf_idf(t,d) for each cell
