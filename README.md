@@ -62,7 +62,7 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
 
 ---
  - Deep Learning:
-    - word embeddings
+    - word embeddings (https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca)
     - Word2Vec
     - BERT
     - LSTM/GRU/Attention
