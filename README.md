@@ -66,6 +66,7 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
     - Word2Vec
     - BERT
     - LSTM/GRU/Attention
+    - Glove
 
 ## Evaluation
  - Mean Average Precision (mAP)
