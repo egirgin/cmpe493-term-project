@@ -72,7 +72,61 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
  - Mean Average Precision (mAP)
  - Normalized Discounted Cumulative Gain (NDCG)
  - Precision of top 10 results (P@10)
+ 
+### Installing trec_eval:
+ 1. Download trec_eval from https://trec.nist.gov/trec_eval/ .
+ 1. Extract the tar.gz file.
+ 1. In the trec eval directory, open a terminal and type "make".
+ 1. The name of the executable is trec_eval in the same directory. You can test it with:
+  ```
+    ./trec_eval test/qrels.test test/results.test
+  ```
+ 
+### Using trec_eval to evaluate:
+ On terminal,
+ ```
+ <path-to-the-trec_eval> <path-to-qrel-file> <path-to-result-file>
+ ```
+ Example:
+ ```
+ ../trec_eval-9.0.7/trec_eval myqrels.txt myresults.txt
+```
 
+### Qrels and results file:
 
+* First argument of the trec-eval (qrels file) should be the file that contains correct labels. It represents the ground truth. It has the format:
 
+query-id 0 document-id relevance
+
+example:
+
+0 0 005b2j4b 2
+
+0 0 00fmeepz 1
+
+...
+
+* Second argument of the trec-eval (results file) should be the file that contains our predictions. It has the format:
+
+query-id	Q0	document-id	rank	score <explanation>
+
+example:
+
+0 Q0 2b73a28n 0 0 STANDARD
+
+0 Q0 zjufx4fo 0 0 STANDARD
+
+...
+
+"Q0" and rank is currently ignored. Explanation is any sequence of alphanumeric characters that is used for identifying the run.
+
+### Options:
+
+-q: In addition to summary evaluation, give evaluation for each query
+
+-l\<num\>: Num indicates the minimum relevance judgement value needed for a document to be called relevant. (All measures used by TREC eval are based on binary              relevance).  Used if trec_rel_file contains relevance judged on a multi-relevance scale.  Default is 1.
+
+### Output
+
+![measures](https://user-images.githubusercontent.com/33669453/102709347-ddf36c00-42ba-11eb-9b41-3a9ef41609f2.png)
 
