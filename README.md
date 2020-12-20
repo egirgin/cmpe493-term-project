@@ -89,7 +89,7 @@ Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4
  ```
  Example:
  ```
- ../trec_eval-9.0.7/trec_eval myqrels.txt myresults.txt
+ ~/trec_eval-9.0.7/trec_eval myqrels.txt myresults.txt
 ```
 
 ### Qrels and results file:
@@ -125,6 +125,14 @@ example:
 -q: In addition to summary evaluation, give evaluation for each query
 
 -l\<num\>: Num indicates the minimum relevance judgement value needed for a document to be called relevant. (All measures used by TREC eval are based on binary              relevance).  Used if trec_rel_file contains relevance judged on a multi-relevance scale.  Default is 1.
+
+-m <measure>: Print only specified measure results.
+ 
+ ```
+ ~/trec_eval-9.0.7/trec_eval -m ndcg myqrels.txt myresults.txt
+ 
+ ~/trec_eval-9.0.7/trec_eval -m map myqrels.txt myresults.txt
+```
 
 ### Output
 
