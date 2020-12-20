@@ -7,7 +7,7 @@ def line2list(line):
     return [list_line[0], list_line[2], list_line[3]]
 
 
-with open("original_labels.txt") as labelFile:
+with open("./data/labels/original_labels.txt") as labelFile:
     lines = labelFile.readlines()
 
     lines = list(map(line2list, lines))
@@ -19,17 +19,17 @@ doc_list = []
 
 for line in lines:
     if line[0] in labels.keys():
-        labels[line[0]] += [ (line[1], line[2]) ]
+        labels[line[0]] += [ (line[1], int(line[2])) ]
     else:
-        labels[line[0]] = [ (line[1], line[2]) ]
+        labels[line[0]] = [ (line[1], int(line[2])) ]
 
     doc_list.append(line[1])
 
-with open("labels.json", "w+") as labeljson:
+with open("./data/labels/labels.json", "w+") as labeljson:
     json.dump(labels, labeljson)
 
 doc_list = set(doc_list)
 
-with open("../doc_list.txt", "w+") as docFile:
+with open("./data/doc_list.txt", "w+") as docFile:
     for doc in doc_list:
         docFile.write(doc+"\n")
