@@ -130,3 +130,7 @@ example:
 
 ![measures](https://user-images.githubusercontent.com/33669453/102709347-ddf36c00-42ba-11eb-9b41-3a9ef41609f2.png)
 
+# References
+
+http://www.rafaelglater.com/en/post/learn-how-to-use-trec_eval-to-evaluate-your-information-retrieval-system
+https://github.com/usnistgov/trec_eval
