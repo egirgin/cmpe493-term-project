@@ -52,23 +52,24 @@ outfile = open("myqrels.txt", "w")
 outfile.write(myqrels)
 outfile.close()
 
+
+result = 0
+
+
 for idx, row in kmeans_results.iterrows():
     label_df = pd.DataFrame(labels_json[str(idx*2+1)], columns=["uid", "relevance"])
-
+    
     label_df = label_df.merge(row.T, left_on="uid", right_on=row.T.index)
-
+    
     label_df.columns = ["uid", "relevance", "prediction"]
+
+    label_df["prediction"] = label_df["prediction"].astype(int)
+
+    label_df["relevance"] = label_df["relevance"].astype(int)
 
     mask = label_df["relevance"] == label_df["prediction"]
 
-    print(idx*2+1)
-    print(sum(mask)*100 / len(label_df))
+    result += (sum(mask)*100 / len(label_df))
 
 
-    
-
-
-
-
-#print(label_df.head())
-
+print(result/25)
