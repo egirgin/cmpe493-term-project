@@ -1,0 +1,3 @@
+nltk
+sklearn
+scipy~=1.1.0
