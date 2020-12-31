@@ -108,7 +108,7 @@ example:
 
 * Second argument of the trec-eval (results file) should be the file that contains our predictions. It has the format:
 
-query-id	Q0	document-id	rank	score <explanation>
+query-id	Q0	document-id	rank	score explanation
 
 example:
 
