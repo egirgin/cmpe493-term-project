@@ -1,4 +1,25 @@
 # cmpe493-term-project
+
+
+## How to Run
+
+To preprocess:
+
+./preprocessing/cos_sim.py
+
+To cluster:
+
+./models/tf_idf2kmeans.py
+
+To create files for evaluation:
+
+./eval/eval.py
+
+
+Last program outputs two files as myqrels.txt and myresults.txt, to be given to trec_eval.
+
+
+
 cmpe493 fall 2020 term project : free text based ranked retrieval model 
 
 Drive : https://drive.google.com/drive/folders/1iHdwsrQdw_25uPSN5zqcxAgIv-maFBD4?usp=sharing
