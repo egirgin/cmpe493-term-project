@@ -3,3 +3,5 @@ __MACOSX
 __pycache__
 /data/text/metadata.csv
 /models/kmeans/*.png
+*.txt
+*.pickle
