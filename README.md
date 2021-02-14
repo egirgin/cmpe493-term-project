@@ -28,6 +28,31 @@ python ./models/doc2vec_test.py --path "doc2vec_s10_e500"
 ```
 The results will be extracted into the ```./models/doc2vec/doc2vec_s10_e500_test.csv``` file
 
+## GloVe
+Training
+```bash
+python ./models/GloVe/glove_clean_best.py 
+```
+The trained model is extracted into the ```./models/GloVe/glove/pretrained_models/glove_500.model``` file
+The results will be extracted into the ```./models/GloVe/glove/preprocessing/cosine_similarity_matrix.csv``` file
+
+```bash
+python ./models/GloVe/glove_clean_tfidf.py 
+```
+The trained model is extracted into the ```./models/GloVe/glove/pretrained_models/glove_tfidf_500.model``` file
+The results will be extracted into the ```./models/GloVe/glove/preprocessing/cosine_similarity_matrix_tfidf.csv``` file
+
+Testing
+```bash
+python ./models/GloVe/glove_clean_tfidf-test.py 
+```
+The results will be extracted into the ```./models/GloVe/glove/preprocessing/cosine_similarity_matrix_test.csv``` file
+
+```bash
+python ./models/GloVe/glove_clean_best-test.py 
+```
+The results will be extracted into the ```./models/GloVe/glove/preprocessing/cosine_similarity_matrix_tfidf_test.csv``` file
+
 ## Evaluating 
 For train results
 ```bash

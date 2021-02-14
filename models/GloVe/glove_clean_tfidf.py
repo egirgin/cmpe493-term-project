@@ -26,10 +26,10 @@ from glove import Corpus, Glove
 stop_words = stopwords.words('english')
 punctuations = list(string.punctuation) +["–"]
 
-data = pd.read_csv("./data/text/raw_data.csv",encoding="utf-8")
+data = pd.read_csv("./data/text/raw_data.csv",encoding="utf-8") 
 queries = pd.read_json("./data/queries/queries.json")
 with open("./data/labels/labels.json","r") as f:
-  labels = json.loads(json.load(f))
+  labels = json.load(f)
 
 def preprocess(sentence):
     """
@@ -102,7 +102,7 @@ weights_df = weights_df.set_index('term').T
 #glove.fit(corpus.matrix, epochs=500, no_threads=16, verbose=False)
 #glove.add_dictionary(corpus.dictionary)
 #glove.save('glove.model')
-glove = Glove.load("./glove/pretrained_models/glove_tfidf_500.model")
+glove = Glove.load("./models/GloVe/glove/pretrained_models/glove_tfidf_500.model")
 
 glove_doc_vectors = []
 glove_doc_ids = []
@@ -154,8 +154,8 @@ for idq in range(len(glove_query_vectors)):
   print(idq+1,"/",len(glove_query_vectors))
   norms[str(index)] = {k:v for k,v in sorted(norms[str(index)].items(), key=lambda item:item[1], reverse=True)}
 
-pd.DataFrame(data=list(norms.values()),columns=norms["1"].keys(),index=list(norms.keys())).to_csv("./glove/preprocessing/cosine_similarity_matrix_tfidf.csv")
-cosine_similarity_matrix = pd.read_csv("./glove/preprocessing/cosine_similarity_matrix_tfidf.csv", index_col=0)
+pd.DataFrame(data=list(norms.values()),columns=norms["1"].keys(),index=list(norms.keys())).to_csv("./models/GloVe/glove/preprocessing/cosine_similarity_matrix_tfidf.csv")
+cosine_similarity_matrix = pd.read_csv("./models/GloVe/glove/preprocessing/cosine_similarity_matrix_tfidf.csv", index_col=0)
 results = ""
 
 for idx, row in cosine_similarity_matrix.iterrows():
@@ -168,7 +168,7 @@ for idx, row in cosine_similarity_matrix.iterrows():
         r += " STANDARD\n"
         results += r
 
-outfile = open("./glove/results/myresults_tfidf_cos_500.txt", "w")
+outfile = open("./models/GloVe/glove/results/myresults_tfidf_cos_500.txt", "w")
 outfile.write(results)
 outfile.close()
 
@@ -187,6 +187,6 @@ for key,value in sorted(labels.items()):
         r += "\n"
         myqrels += r
 
-outfile = open("./glove/results/myqrels_tfidf_cos_500.txt", "w")
+outfile = open("./models/GloVe/glove/results/myqrels_tfidf_cos_500.txt", "w")
 outfile.write(myqrels)
 outfile.close()
