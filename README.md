@@ -3,6 +3,8 @@
 
 ## How to Run
 
+### TF-IDF
+
 To preprocess:
 
 ./preprocessing/cos_sim.py
@@ -15,6 +17,17 @@ To create files for evaluation:
 
 ./eval/eval.py
 
+### Okapi BM25
+
+Preprocess and get scores:
+
+./models/bm25/bm25.py
+
+Create files for evaluation:
+
+./models/bm25/eval_bm25.py
+
+Produces three files: results_bm25.txt, results_bm25_L.txt, results_bm25_Plus.txt
 
 Last program outputs two files as myqrels.txt and myresults.txt, to be given to trec_eval.
 
